@@ -1,5 +1,13 @@
 # ApiExplorer
 
+Disclaimer: This wrapper is NOT an official app and do not attempt to represent Google in any way.
+
+This is a small app to view a list of Google's APIs. It's made for developers of apps and web services. Have fun exploring new cool APIs, that make your apps better.
+
+For more information about Google APIs visit https://developers.google.com/
+
+Please take care, that this app might be unstable due to it's early development state!
+
 ## LICENSE
 
 ```
