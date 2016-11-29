@@ -19,6 +19,4 @@ class Api {
 	var discoveryRestUrl: String? = null
 	@Body
 	var documentationLink: String? = null
-	@Body
-	var preferred: Boolean = false
 }

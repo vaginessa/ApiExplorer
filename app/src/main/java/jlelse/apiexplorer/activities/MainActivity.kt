@@ -1,5 +1,7 @@
 package jlelse.apiexplorer.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -30,10 +32,24 @@ class MainActivity : AppCompatActivity() {
 				.progress(true, 0)
 				.show()
 		asyncSafe {
-			val response = apiGetter.getApis(false)
+			val response = apiGetter.getApis()
 			mainThreadSafe {
 				progressDialog?.dismiss()
-				fastAdapter.setNewList(response.mapTo(mutableListOf<ApiItem>()) { ApiItem().withApi(it) })
+				fastAdapter.setNewList(response.mapTo(mutableListOf<ApiItem>()) {
+					ApiItem().withApi(it).withOnItemClickListener { view, iAdapter, apiItem, i ->
+						val api = apiGetter.getApi(index = i)
+						MaterialDialog.Builder(this@MainActivity)
+								.title("${api?.title} ${api?.version}")
+								.content("${api?.description}")
+								.neutralText(android.R.string.ok)
+								.positiveText(R.string.documentation)
+								.onPositive { materialDialog, dialogAction ->
+									startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, Uri.parse(api?.documentationLink)), getString(R.string.documentation)))
+								}
+								.show()
+						true
+					}
+				})
 			}
 		}
 	}
