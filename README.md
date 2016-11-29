@@ -1,4 +1,4 @@
-# ApiExplorer
+# ApiExplorer for Google BETA
 
 Disclaimer: This wrapper is NOT an official app and do not attempt to represent Google in any way.
 
@@ -11,7 +11,7 @@ Please take care, that this app might be unstable due to it's early development 
 ## LICENSE
 
 ```
-NewsCatchr  Copyright © 2016  Jan-Lukas Else
+ApiExplorer  Copyright © 2016  Jan-Lukas Else
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
