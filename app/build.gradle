@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "jlelse.apiexplorer"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "0.1 beta"
+        resConfigs "en"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix '.debug'
+            versionNameSuffix ' debug'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:support-v4:25.0.1'
+    compile 'com.android.support:support-v13:25.0.1'
+    compile 'com.afollestad:bridge:3.3.0'
+    compile 'com.mikepenz:fastadapter:2.1.0@aar'
+    compile 'com.mikepenz:fastadapter-commons:2.1.0@aar'
+    compile 'com.afollestad.material-dialogs:core:0.9.1.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'com.mcxiaoke.koi:async:0.5.3@aar'
+}
